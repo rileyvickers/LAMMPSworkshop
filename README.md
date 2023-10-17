@@ -55,9 +55,11 @@ uncomment the per-atom data collection
 change the simulation temperature or pressure
 
 To run the simulation on four processes using mpirun:
+
     mpirun -np 4 lmp -i simulation.in
 
 To utilize the openmp optimization by using two threads per process (this won't improve timing unless your computer has 8 cores or more)
+
     mpirun -np 4 lmp -sf omp -pk omp 2 -i simulation.in
 
 To use the provided python notebook, simply open in your preferred notebook environment and run the cell. 
