@@ -46,3 +46,19 @@ If it isn't there, from the build directory: (may need to add sudo to the beginn
     cp lmp /usr/local/bin/lmp
 
 At this stage, you have LAMMPS installed and can use it to run a simulation.
+
+Data collected from my run of the simulation is already present in this folder, so other than to check your LAMMPS is working, you should play around with the input file before running it.
+Some ways to play around:
+run the simulation for longer
+change what thermo data is collected
+uncomment the per-atom data collection
+change the simulation temperature or pressure
+
+To run the simulation on four processes using mpirun:
+    mpirun -np 4 lmp -i simulation.in
+
+To utilize the openmp optimization by using two threads per process (this won't improve timing unless your computer has 8 cores or more)
+    mpirun -np 4 lmp -sf omp -pk omp 2 -i simulation.in
+
+To use the provided python notebook, simply open in your preferred notebook environment and run the cell. 
+
